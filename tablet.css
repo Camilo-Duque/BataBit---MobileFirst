@@ -1,0 +1,34 @@
+.main--exchange-tables-container {
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+}
+
+.product-cards--container {
+    display: flex; /* Para que de manera automática se reacomoden horizontalmente */
+    flex-wrap: wrap; /* Para que en combinación con flex nos permita organizar el contenido en columnas. */
+    width: 930px; /* Para que no exceda el width tipo tablet. */
+    margin: 0 auto; /* para centrado  */
+}
+
+
+.plans-container--slider {
+    justify-content: center; /* nos centra el contenido de las tarjetas del slider una vez llegue a 930px */
+}
+
+.main--exchange-tables-container {
+    justify-content: center;
+}
+
+.exchange--tables-right-arrow {
+    display: inline-block; /* Span por default viene en "inline", para hacerlo visible debe ser un block o inline-block.*/
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* adasd */

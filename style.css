@@ -1,0 +1,688 @@
+/*
+1. Variables
+2. Default set (* {box-sizing, margin & padding} html {REM defaults & main font})
+3. Posicionamiento (position, display, etc.)
+4. Modelo de caja (Box model - widht/height/).
+5. Tipografía (fuentes y tamaños)
+6. Visuales (Shadow-box, Borders, background-color, color)
+7. Otros - Miscelaneous
+*/
+
+:root {
+    /* Variables: Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --warm-black: #201E1C;
+    --warm-black-1: #282623;
+    --off-white: #FAF8F7;
+    --white: #FFFFFF;
+    --secondary-blue: #1A9Af7;
+    --soft-blue: #E7F5FF;
+    --grey: #BABABA;
+    --dark-grey: #808080;
+}
+
+/* Default Set */
+* {
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size:62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Sección del header */
+
+header {
+    position: relative; /* Posición para que el botón pueda flotar. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px; /*Dimensión mas pequeña en smartphones*/
+    height: 324px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center; /* Atributo para centrar elementos en un flex box container */
+}
+
+.header--title-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center; /* Atributo para centrar elementos en un flex box container */
+}
+
+.header--title-container h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--white)
+}
+
+.header--title-container p {
+    margin-top: 25px; /*Margin agregado para separar el texto del título*/
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange)
+}
+
+.header--title-container .header--button {
+    position:absolute; /* Esta positición nos permite fijar el elemento entre los 4 lados, ademas toma como base la posición del header como referencia*/
+    left: calc(50% - 114.5px); /* Uso de función Calc para centrar elemento.*/
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /* Sombra */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); /* sombra con color negro y difuminado 0.16*/
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+
+.header--button span {
+    display: inline-block; /* Span por default viene en "inline", para hacerlo visible debe ser un block o inline-block.*/
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background: url("./assets/icons/arrow_down.svg");
+}
+
+/* Sección de intercambio */
+
+main {
+    width: 100%;
+    /* min-width: 320px; */ /* Opcional para evitar que el color de fondo se encoja con el contenido */
+    height: auto; /* porque el contenido irá definiendo la altura necesaria.*/
+    background-color: var(--off-white);
+}
+
+.main--exchange-container {
+    width: 100%;
+    height: auto; /* porque el contenido irá definiendo la altura necesaria.*/
+    padding-top: 80px; /* Espaciado para secciones previas y posteriores */
+    padding-bottom: 80px; /* Espaciado para secciones previas y posteriores */
+    text-align: center;
+}
+
+.main--exchange-container--title {
+    width: 90%; /* para limitar el tamáño del título y contenidos de texto de este contenedor DIV */
+    min-width: 288px; /* Ayudará a limitar hasta donde se puede llegar a hacer pequeño */
+    max-width: 900px; /* Ayudará a limitar hasta donde se puede llegar a hacer grande */
+    margin: 0 auto; /* Como no ocupa el 100% se posicionará siempre en el centro con este margen */
+}
+
+.main--exchange-container .backgroundImg {
+    width: 200px; /* Se aplican dimensiones para hacer visible el contenedor div, ancho imagen */
+    height: 200px; /* Se aplican dimensiones para hacer visible el contenedor div, ancho imagen */
+    margin: 0 auto; /* Para centrar y posicionar el contenedor div */
+    margin-bottom: 50px;
+    background-image: url("./assets/imgs/bitcoin.svg");
+    background-size: cover; /* Redimensiona la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centrado de imágenes sin importar el tamaño del contendor o imágen tengamos siempre el centro. */
+    background-repeat: no-repeat; /* Evita repetir la imagen para completar el contenido del contenedor */
+}
+
+
+.main--exchange-container h2 {
+    margin-bottom: 30px; /* Espaciado para el título y separar del parrafo. */
+    font-size: 2.4rem;
+    font-weight: bold; 
+    line-height: 2.6rem; /* Altura de línea para serapación del párrafo */
+    color: var(--warm-black);
+}
+
+.main--exchange-container p {
+    margin-bottom: 50px; /* Espaciado para el párrafo y separar de la tabla. */
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem; 
+    color: var(--warm-black-1);
+}
+
+.main--currency-table .main--commission-container {
+    width: 70%; /* ancho máximo del contenedor principal */
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto; /* Márgenes de top y bottom en 0, izq y der automaticas para centrado  */
+    font-family: "Inter", sans-serif;
+}
+
+.main--currency-table .currency-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.34rem;
+    color: var(--bitcoin-orange);
+    te;
+}
+
+.main--commission-table .commission-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.34rem;
+    color: var(--secondary-blue);
+}
+
+.currency-table--container, .commission-table--container {
+    width: 90%; /* ancho máximo del contenedor <div> para la tabla*/
+    min-width: 230px;
+    max-width: 300px;
+    height: 230px;
+    margin: 0 auto;
+}
+
+.currency-table--container table, .commission-table--container table {
+    width: 100%; /* ancho máximo de la tabla a heredar por su elemento padre*/
+    height: 100%; /* altura máxima de la tabla a heredar por su elemento padre */
+}
+
+.currency-table--container td, .commission-table--container td {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--dark-grey);
+    background-color: var(--white);
+}
+
+
+/* Estilos de bordes redondeados para cada esquina de la tabla */
+
+.currency-table--container .table__top-left, .commission-table--container .table__top-left {
+    border-top-left-radius: 8px;
+}
+
+.currency-table--container .table__top-right, .commission-table--container .table__top-right {
+    border-top-right-radius: 8px;
+}
+
+.currency-table--container .table__bottom-left, .commission-table--container .table__bottom-left {
+    border-bottom-left-radius: 8px;
+}
+
+.currency-table--container .table__bottom-right, .commission-table--container .table__bottom-right  {
+    border-bottom-right-radius: 8px;
+}
+
+
+/* estilos de textos con fuente "Inter" para columna de precios de la tabla */
+
+.currency-table--container .table__right, .commission-table--container .table__right {
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-family: "Inter", sans-serif;
+    line-height: 1.69rem;
+    color: #757575;
+}
+
+/* Clases aplicadas a flechas de tendencias para tabla 1 */
+
+.currency-table--container .down {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-down.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table--container .up {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-up.svg");
+    /* Combo de atributos y buenas prácticas en nuestras imágenes e iconos */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Párrafos de fecha de actualización de datos */
+
+.main--currency-table .currency-table--date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto; /* Margenes para centrado automático. */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+}
+
+.main--commission-table .commission-table--date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto; /* Margenes para centrado automático.*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--soft-blue);
+} 
+
+.currency-table--date p {
+    margin: 0 7px;
+    font-size: 1.2rem;
+    font-weight: 300; /* peso de fuente liviano para caja de texto de fecha update */
+    line-height: 1.5rem;
+    color: var(--warm-black-1);
+}
+
+.commission-table--date p {
+    margin: 0 7px;
+    font-size: 1.2rem;
+    font-weight: 300; /* Peso de fuente liviano para caja de texto de fecha update */
+    line-height: 1.5rem;
+    color: var(--warm-black-1);
+}
+
+
+/* -----------------Sección de beneficios------------------ */
+
+.main-product-detail {
+    position: relative;
+    width: 100%;
+    min-width: 320px;  /* Importante, tamaño mínimo para celulares y al cual se limitará el contenido */
+    height: auto; /* El contenido determina el alto de la sección */
+    padding: 20px 10px; /* limitamos el contenedor principal en padding, para que las tarjetas puedan tener el 100% del width */
+    background-color: var(--warm-black);
+}
+
+.product-detail--batata-logo {
+    position: absolute; /* heredará al contenedor padre con position relative, (main-product-detail) con el fin de ubicarse adecuadamente */
+    width: 40px;
+    height: 25px;
+    left: calc(50% - 20px);
+    top: -10px;
+    background-image: url("./assets/icons/logo_bata.svg");
+}
+
+.product-detail--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto; /* Centrado automático con base a las márgenes,0 en top y bottom, auto en izq y der. */
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+.product-detail--title h2 {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--white);
+}
+
+.product-detail--title p {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--grey);
+}
+
+/* -----------------Estilos tarjeta sección de beneficios------------------ */
+
+.product-detail--card {
+    width: 90%; /* ... */
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px; /* altura mínima */
+    height: auto;  /* altura automática para evitar overflows */
+    margin: 15px auto;  /* auto para centrado automático */
+    padding: 15px;
+    background-color: var(--warm-black-1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16); /* rgba con efecto sombreado */
+}
+
+.product-detail--card .clock {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px; /* Para separar el ícono del texto */
+    /* background-image: url("./assets/icons/clock.svg"); */
+    /* background-set de buenas prácticas para centrar imágenes e íconos */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.product--card-title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--white);
+}
+
+.product--card-body {
+    margin-bottom: 22px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--grey);
+}
+
+/* -----------------Estilos para iconos de tarjetas------------------ */
+.product-detail--card .icon-card {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px; /* Para separar el ícono del texto */
+    /* background-set de buenas prácticas para centrar imágenes e íconos */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.clock {
+    background-image: url("./assets/icons/clock.svg");
+}
+
+.eye {
+    background-image: url("./assets/icons/eye.svg");
+}
+.dollar {
+    background-image: url("./assets/icons/dollar-sign.svg");
+}
+.check {
+    background-image: url("./assets/icons/check-circle.svg");
+}
+
+
+
+/* -----------------Estilos para sección comodín ------------------ */
+.bitcoin-img-container {
+    width: 100%;
+    min-width: 320px; 
+    height: 50vh; /* Es importante que tenga el 50% de la altura del viewport - modificación al 100% */
+    background-image: url("./assets/imgs/bitcoinbaby2x.jpg");
+    /* background-set de buenas prácticas para centrar imágenes e íconos */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+}
+
+.bitcoin-img-container h2 {
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--white);
+    text-align: center;
+}
+
+
+/* -----------------Estilos para sección planes ------------------ */
+.main--plans-container {
+    width: 100%; /* como contenedor principal el 100% del width */
+    min-width: 320px; /* no mas pequeño que 320px */
+    padding-bottom: 70px; /* espaciado con la siguiente sección, el footer */
+    text-align: center;
+}
+
+.plans--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto; /* El texto limita el crecimiento del contendor */
+    margin: 0 auto; /* Centrado automático */
+    margin-bottom: 34px; /*Para alejar el texto del contenedor de la parte inferior*/
+}
+
+.plans--title h2 {
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+
+.plans--title p {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+/* -----------------Estilos para contenedor de tarjetas ------------------ */
+
+.plans-container--card {
+    position: relative; /* Para poder generar efecto flotante en la tarjeta */
+    scroll-snap-align: center; /* animación para complementar scroll horizontal */
+    width: 70%;
+    min-width: 190px; /* controlar el ancho en viewport */
+    max-width: 300px; /* Para controlar tamaño en viewports tipo tablet */
+    height: 250px; 
+    margin: 50px 5px 0; /* arriba - izq/der - abajo */
+    padding: 0 15px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16); /* Obtenido de figma */
+}
+
+.plan-card--title {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    color: var(--warm-black);
+}
+
+.plan-card--price {
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    line-height: 6.3rem;
+    color: var(--warm-black);
+}
+
+.plan-card--price sup {
+    position: absolute;
+    margin: 8px -10px 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5rem;
+    color: var(--warm-black);
+}
+
+.plan-card--saving {
+    font-size: 1.2rem;
+    color: #757575;
+    font-family: "Inter", sans-serif;
+}
+
+/* -----------------Estilos para aviso flotante de tarjetas  ------------------ */
+.recommended {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px); /* Utilizado para centrar texto, 60px extraído de la mitad del width */
+    top: -15px;
+    padding: 7.75px; /* Utilizado para centrar texto, extraído de la altura (31/4) */
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    line-height: 1.45rem;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--white);
+}
+
+.basic_plan {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px); /* Utilizado para centrar texto, 60px extraído de la mitad del width */
+    top: -15px;
+    padding: 7.75px; /* Utilizado para centrar texto, extraído de la altura (31/4) */
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    line-height: 1.45rem;
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    color: var(--off-white);
+}
+
+.pro_plan {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px); /* Utilizado para centrar texto, 60px extraído de la mitad del width */
+    top: -15px;
+    padding: 7.75px; /* Utilizado para centrar texto, extraído de la altura (31/4) */
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    line-height: 1.45rem;
+    background-color: var(--secondary-blue);
+    border-radius: 8px;
+    color: var(--off-white);
+}
+
+
+/* -----------------Estilos para botón de contenedor de tarjetas ------------------ */
+
+.plan-card--CTA {
+    margin-top: 20px; /* Espaciado en top para alejar del párrafo */
+    width: 150px;
+    height: 48px;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    font-family: "DM Sans", sans-serif;  /* Después de inspeccionar es necesario decirle a este botón la fuente DM Sans */
+    color: var(--warm-black-1);
+    background-color: var(--off-white);
+}
+
+.plan-card--CTA span {
+    margin-left: 6.5px;
+    display: inline-block;  /* Para poder ver el bloque debe ser inlina.block */
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/icons/arrow-right.svg");
+    vertical-align: text-bottom; /* Para alinear verticalmente el texto del botón */
+}
+
+/* -----------------Estilos para slider de contenedor de tarjetas ------------------ */
+
+.plans-container--slider {
+    display: flex; /* para poder trabajar de manera flexible con las tarjetas */
+    height: 316px; /* un poco mas grande que las tarjetas */
+    margin: 0 20px; /* Márgen para complementar espaciado faltante en lados de slider */
+    overflow-x: scroll;  /* efecto de scrolling horizontal */ 
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+/* -----------------Estilos para barra scroll de tarjetas ------------------ */
+.plans-container--slider::-webkit-scrollbar { 
+    background-color: none;
+    height: 1.8px;
+}
+.plans-container--slider::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-blue);
+}
+
+/* -----------------Estilos para footer ------------------ */
+footer {
+    display: flex;  /* Para ubicar secciones del contenedor una frente a la otra, de manera automática FLEX los posiciona adecuadamente */
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section img { /*Fix sugerido por Ligthroom para rendimiento.*/
+    width: 129px; 
+    height: 24px;
+}
+
+footer section {
+    display: flex; /* Para ubicar secciones de manera mas centrada */
+    width: 50%; /* vital para darle el espacio a cada sección del 50% del viewport */
+    justify-content: center; /* Para alinear contenido al centro */
+    align-items: center; /* Para alinear contenido al centro */
+}
+
+footer .left ul {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none; /* Para quitar bullets de lista */
+}
+
+.left li {
+    margin: 10px 0; /* Para mover un poco la lista de manera vertical */
+}
+
+.left a {
+    text-decoration: none; /* Para quitar decoración tipo enlace */
+    color: var(--white);
+}
+
+.main--exchange-tables-container {
+    display: flex;
+    align-items: baseline;
+    height: 350px; 
+    margin: 0 45px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.exchange--tables-right-arrow {
+    display: inline-block; /* Span por default viene en "inline", para hacerlo visible debe ser un block o inline-block.*/
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: url("./assets/imgs/swipe_left.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* -----------------Estilos para barra scroll de monedas ------------------ */
+.main--exchange-tables-container::-webkit-scrollbar { 
+    background-color: none;
+    height: 1.8px;
+}
+.main--exchange-tables-container::-webkit-scrollbar-thumb {
+    background-color: var(--bitcoin-orange);
+}
+
+/* ... */
