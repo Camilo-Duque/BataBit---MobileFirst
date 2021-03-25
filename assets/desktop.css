@@ -31,8 +31,6 @@
 }
 
 .bitcoin-img-container {
-    min-width: 200px; 
-    background-attachment: scroll;  
+    min-width: 320px; 
+    background-attachment: fixed;  
 }
-
-/* adasd */

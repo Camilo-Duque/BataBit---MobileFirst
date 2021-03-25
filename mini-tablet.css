@@ -32,5 +32,5 @@
 
 .bitcoin-img-container {
     min-width: 200px; 
-    background-attachment: fixed;  
+    background-attachment: scroll;  
 }

@@ -8,8 +8,9 @@
     <title>Batabit - Mobile First</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./mini-tablet.css" media="(min-width: 760px)">
-    <link rel="stylesheet" href="./tablet.css" media="(min-width: 930px)">
+    <link rel="stylesheet" href="./mini-tablet.css" media="(min-width: 760px) and (max-width:929px)">
+    <link rel="stylesheet" href="./tablet.css" media="(min-width: 930px) and (max-width:1024px)">
+    <link rel="stylesheet" href="./assets/desktop.css" media="(min-width: 1024px)">
     <link rel="shortcut icon" type="image/svg" href="./assets/icons/logo_bata.svg"/>
 </head>
 <body>
@@ -128,7 +129,7 @@
                         <h3 class="plan-card--title">Pago mensual</h3>
                         <p class="plan-card--price"><sup>$</sup>19</p> <!-- etiqueta sup para colocar superindices -->
                         <p class="plan-card--saving">Paga 1 vez al mes desde el día de tu compra.</p>
-                        <button class="plan-card--CTA">Empieza<span></span></button>
+                        <button class="plan-card--CTA" onclick="alert('Botón de plan - Ejemplo')">Empieza<span></span></button>
                     </div>
                 </article>
                <article class="plans-container--card">
@@ -137,7 +138,7 @@
                        <h3 class="plan-card--title">Pago Anual</h3>
                        <p class="plan-card--price"><sup>$</sup>99</p> <!-- etiqueta sup para colocar superindices -->
                        <p class="plan-card--saving">*Ahorras $129 comparado al plan mensual.</p>
-                       <button class="plan-card--CTA">Escoge este <span></span></button>
+                       <button class="plan-card--CTA" onclick="alert('Botón de plan - Ejemplo')">Escoge este <span></span></button>
                    </div>
                </article>
                 <article class="plans-container--card">
@@ -146,7 +147,7 @@
                         <h3 class="plan-card--title">Lifetime Alpha</h3>
                         <p class="plan-card--price"><sup>$</sup>129</p> <!-- etiqueta sup para colocar superindices -->
                         <p class="plan-card--saving">*1 solo pago, ahorro infinito 50 cupos.</p>
-                        <button class="plan-card--CTA">Empieza<span></span></button>
+                        <button class="plan-card--CTA" onclick="alert('Botón de plan - Ejemplo')">Empieza<span ></span></button>
                     </div>
                 </article>
            </section>
@@ -155,9 +156,9 @@
     <footer id="footer">
         <section class="left">
             <ul>
-                <li><a href="#footer">LinkedIn</a></li>
-                <li><a href="#footer">Crunchbase</a></li>
-                <li><a href="#footer">Hackernews</a></li>
+                <li><a href="#footer" onclick="alert('Red social de ejemplo')">LinkedIn</a></li>
+                <li><a href="#footer" onclick="alert('Red social de ejemplo')">Crunchbase</a></li>
+                <li><a href="#footer" onclick="alert('Red social de ejemplo')">Hackernews</a></li>
             </ul>
         </section>
         <section class="right">
