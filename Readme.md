@@ -6,10 +6,11 @@ This repo its about a project of a landing page proposed by @Platzi for a cripto
 
 ## GitHub Pages:
 
-Check the results here: 
+Check the results of thsi project here: 
 
 - https://camilo-duque.github.io/Project_BataBit-MobileFirst/
 
+> Don't forget try it in different mobile devices.
 
 
 ## Requirements
