@@ -1,6 +1,16 @@
 # About
 This repo its about a project of a landing page proposed by @Platzi for a cripto-currency company called Batabit, developed appliying techniques of just CSS and HTML with the Mobile First best practices.
 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+## GitHub Pages:
+
+Check the results here: 
+
+- https://camilo-duque.github.io/Project_BataBit-MobileFirst/
+
+
 
 ## Requirements
 
